@@ -17,7 +17,7 @@ SELECT
 		 a.menu_name
 	  , b.category_name
 	  , a.category_code
-	  , b.category_code
+	  -- , b.category_code
   FROM tbl_menu a
  INNER JOIN tbl_category b ON a.category_code = b.category_code;  -- b.category_code => pk 
  
@@ -59,5 +59,7 @@ SELECT
 		 a.category_name
 	   , b.category_name
   FROM tbl_category a
-  JOIN tbl_category b ON (a.ref_category_code = b.category_code) 
+  JOIN tbl_category b ON (a.ref_category_code = b.category_code);
   
+SELECT * FROM tbl_menu;
+SELECT * FROM tbl_category;

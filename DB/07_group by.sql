@@ -72,5 +72,7 @@ SELECT
 	  , menu_price
 	  , category_code
   FROM tbl_menu
- GROUP BY menu_price, category_code
+ GROUP BY menu_price, category_code -- 앞에 있는 (menu_price 기준으로 그룹화를해서 합계내줌),  if (category_code, menu_price)라면 category_code기준으로 그룹화함 
   WITH ROLLUP; 
+  
+SELECT * FROM tbl_menu;

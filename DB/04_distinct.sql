@@ -1,9 +1,11 @@
 -- distinct
 
 SELECT 
-		 category_code
+		*		 		 		 		 
   FROM tbl_menu
  ORDER BY category_code;
+
+SELECT * FROM tbl_menu;
  
 -- 메뉴가 할당된 카테고리의 종류
 SELECT
