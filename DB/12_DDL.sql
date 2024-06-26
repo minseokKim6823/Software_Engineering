@@ -65,7 +65,10 @@ DESC tb2;
 ALTER TABLE tb2 DROP PRIMARY KEY;
 DESC tb2;
 
-/* truncate => 절삭(관련데이터 삭제) */
+/* truncate */
+-- 절삭(truncate) vs 삭제(delete)
+-- 테이블의 데이터(데이터 및 관련 제약조건 관련 등 깔끔하게 제거)
+-- 테이블의 초기화 (테이블 처음 만들 당시로 돌려줌
 CREATE TABLE if NOT EXISTS tb3(
   pk INT AUTO_INCREMENT,
   fk INT,
@@ -73,6 +76,16 @@ CREATE TABLE if NOT EXISTS tb3(
   PRIMARY KEY(pk),
 );
 
+INSERT 
+  INTO tb3
+VALUES
+(
+  NULL,
+  1,
+  'N'
+);
+
 DESC tb3;
 
+SELECT * FROM tb3;
 TRUNCATE TABLE tb3;
