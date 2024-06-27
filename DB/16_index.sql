@@ -29,3 +29,10 @@ SHOW INDEX FROM phone;
 -- 다시 index가 추가된 컬럼으로 조회해서 index를 태웠는지 확인
 SELECT * from phone WHERE phone_name ='galaxyS24';
 EXPLAIN SELECT * FROM phone WHERE phone_name='galaxyS24';
+
+-- 주기적으로 한 번씩 다시 INDEX를 rebuild 해 주어야 한다.
+-- (mariadb는 optimize 키워드를 사용한다.)
+OPTIMIZE TABLE phone;
+
+DROP INDEX idx_name ON phone;
+SHOW INDEX FROM phone;
