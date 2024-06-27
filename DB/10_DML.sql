@@ -43,7 +43,7 @@ SELECT
  WHERE menu_name = '소시지맛커피';
  
 UPDATE tbl_menu
-	SET category_code = 7;
+	SET category_code = 7
  WHERE menu_code = 25;
  
  
@@ -79,10 +79,10 @@ DELETE
  
 -- REPLACE
 -- 	INTO tbl_menu
-REPLACE INTO tbl_menu --INTO 생략가능
+REPLACE INTO tbl_menu -- INTO 생략가능
 VALUES
 (
-  17
+  18
 , '참기름소주'
 , 5000
 , 10

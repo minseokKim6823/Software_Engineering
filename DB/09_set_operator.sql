@@ -87,3 +87,17 @@ SELECT
  				  WHERE b.menu_price <9000) c ON (a.menu_code = c.menu_code)
  WHERE a.category_code = 10
  AND c.menu_code IS NULL;
+ 
+ select
+ *
+   FROM tbl_menu a
+  LEFT JOIN (SELECT b.menu_code
+ 						, b.menu_name
+ 						, b.menu_price
+ 						, b.category_code
+ 						, b.orderable_status
+ 					FROM tbl_menu b
+ 				  WHERE b.menu_price <9000) c ON (a.menu_code = c.menu_code)
+					 WHERE a.category_code = 10;
+ 
+SELECT * FROM tbl_menu;

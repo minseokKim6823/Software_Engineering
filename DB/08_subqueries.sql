@@ -103,3 +103,5 @@ SELECT
 					 where b.category_code = a.category_code)
  ORDER BY 1;
  
+
+ 
