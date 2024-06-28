@@ -99,16 +99,16 @@ delimiter //
 CREATE OR REPLACE TRIGGER trg_productafter
 	AFTER INSERT
 	ON pro_detail
-	FOR EACH ROW
+	FOR EACH row
 BEGIN 
 	if NEW.status = '입고' then
 	  UPDATE product a
-	     SET a.stock = a.stock + NEW.amount;
-	   WHERE a.pcode = NEW.pcode
+	     SET a.stock = a.stock + NEW.amount
+	   WHERE a.pcode = NEW.pcode;
 	ELSEIF NEW.status = '출고' then
-	  UPDATE product a
-	     SET stock = stock - NEW.amount;
-	   WHERE a.pcode = NEW.pcode
+	  UPDATE product
+	     SET stock = stock - NEW.amount
+	   WHERE pcode = NEW.pcode; 
 	END if;
 END //
 
@@ -169,6 +169,18 @@ VALUES
 , 5,'입고'
 );
 
+
+INSERT
+  INTO pro_detail
+(
+  dcode, pcode, pdate
+, amount, STATUS
+)
+VALUES
+(
+ NULL, 3, CURDATE()
+, 5,'입고'
+);
 
 INSERT
   INTO pro_detail
